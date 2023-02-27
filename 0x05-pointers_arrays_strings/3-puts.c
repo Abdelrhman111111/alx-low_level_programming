@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _puts - Print the string
- * @str: The string to update
+ * _puts - Prints a string
+ * @str: The string to print
  * Return: void
  */
 
