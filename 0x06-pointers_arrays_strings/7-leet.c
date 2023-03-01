@@ -18,7 +18,7 @@ char *leet(char *s)
 
 		while (y < l)
 		{
-			if (s[x] == u[b] || s[x] - 32 == u[y])
+			if (s[x] == u[y] || s[x] - 32 == u[y])
 			{
 				s[x] = z[y];
 			}
