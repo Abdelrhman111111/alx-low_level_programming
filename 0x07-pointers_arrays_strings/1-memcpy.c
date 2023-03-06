@@ -2,10 +2,10 @@
 
 /**
  * _memcpy - the Entry point
- * @dest: destination value
- * @src: source value
+ * @dest: destination
+ * @src: source
  * @n: value
- * Return: return 0 
+ * Return: return 0.
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
