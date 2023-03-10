@@ -3,15 +3,14 @@
 #include "main.h"
 
 /**
- * main - prints the minimum number of coins
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: return 0
+ * main - get minimum of coins.
+ * @argc: arguments numbers.
+ * @argv: value of arguments.
+ * Return: return 0.
  */
 int main(int argc, char **argv)
 {
-	int num, j, result;
+	int n, i, r;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -20,24 +19,24 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	num = atoi(argv[1]);
-	result = 0;
+	n = atoi(argv[1]);
+	r = 0;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	for (j = 0; j < 5 && num >= 0; j++)
+	for (i = 0; i < 5 && n >= 0; i++)
 	{
-		while (num >= coins[j])
+		while (n >= coins[i])
 		{
-			result++;
-			num -= coins[j];
+			r++;
+			n -= coins[i];
 		}
 	}
 
-	printf("%d\n", result);
+	printf("%d\n", r);
 	return (0);
 }
