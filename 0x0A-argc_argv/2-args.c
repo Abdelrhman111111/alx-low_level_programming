@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - Prints the command arguments 
+ * main - shows the command line arguments.
  * @argc : number of arguments
- * @argv : string argumenstvectot
- * Return: return 0 
+ * @argv : value of argumenst.
+ * Return: return 0.
  */
 int main(int argc, char *argv[])
 {

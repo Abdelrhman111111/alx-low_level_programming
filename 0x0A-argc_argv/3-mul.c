@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - Prints multiplying of numbers
- * @argc : arguments number
- * @argv : value of argument func
- * Return: return 0 
+ * main - shows the command line arguments.
+ * @argc : number of arguments
+ * @argv : value of argumenst.
+ * Return: return 0.
  */
 int main(int argc, char *argv[])
 {

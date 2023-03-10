@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * main - put argument of cmd
- * @argc: arguments number
- * @argv: value of arguments
- * Return: retuen 0 
+ * main - shows the command line arguments.
+ * @argc : number of arguments
+ * @argv : value of argumenst.
+ * Return: return 0.
  */
 int main(int argc, char *argv[])
 {
