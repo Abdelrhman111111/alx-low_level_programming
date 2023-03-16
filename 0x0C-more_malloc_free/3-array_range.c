@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include "main.h"
 /**
-  *array_range - .............
-  *@min: ............
-  *@max: ..............
-  *
-  *Return: ...........
-  */
+ * *array_range - makes an array of integers
+ * @min: min range of values.
+ * @max: max range of values.
+ *
+ * Return: pointer.
+ */
 int *array_range(int min, int max)
 {
 	int r, x;
@@ -17,7 +17,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-        r = ((max + 1) - min);
+	r = ((max + 1) - min);
 
 	po = malloc(r * sizeof(int));
 
@@ -31,4 +31,3 @@ int *array_range(int min, int max)
 
 	return (po);
 }
-
