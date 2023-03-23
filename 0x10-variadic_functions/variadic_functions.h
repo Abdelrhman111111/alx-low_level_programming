@@ -1,25 +1,27 @@
-#ifndef _HEADER_
-#define _HEADER_
+#ifndef _VARIADIC_FUNCTIONS_H_
+#define _VARIADIC_FUNCTIONS_H_
+
+#include <stdio.h>
 #include <stdarg.h>
 
-int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-void print_a_char(char *separator, va_list args);
-void print_a_integer(char *separator, va_list args);
-void print_a_float(char *separator, va_list args);
-void print_a_char_ptr(char *separator, va_list args);
-
 /**
- * struct format_types - Struct format_types
- * @identifier: The conversion specifier
- * @f: The function pointer
+ * struct p - checker struct
+ * @p: possibility
+ * @f: Function to be used
  */
-typedef struct format_types
+typedef struct p
 {
-	char *identifier;
-	void (*f)(char *separator, va_list args);
-} f_dt;
+char *p;
+void (*f)(va_list);
+} checker;
+
+void print_c(va_list);
+void print_i(va_list);
+void print_f(va_list);
+void print_s(va_list);
+
 #endif
