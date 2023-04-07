@@ -1,45 +1,36 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
-  * binary_to_uint -...................
-  * @b:........................................
-  * Return:...............
-  */
+ * binary_to_uint -.............................
+ * @b:................
+ * Return:.................
+ */
+
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int l = 0, c = 0, s = 0;
+	int l, x, a;
 
-	if (b == NULL)
-		return (0);
+	a = 0;
 
-	l = _strlen(b);
-	while (l--)
+	if (b != NULL)
 	{
-		if (b[l] != 48 && b[l] != 49)
-			return (0);
+		for (l = 0 ; b[l] != '\0' ; l++)
+		{
+			if (b[l] != 48 && b[l] != 49)
+			{
+				return (0);
+			}
+		}
 
-		if (b[l] == 49)
-			s += 1 << c;
-
-		c++;
+		for (x = 0, l-- ; l >= 0 ; l--)
+		{
+			a = a + ((b[l] - '0') << x);
+			x++;
+		}
 	}
-
-	return (s);
-}
-
-/**
-  * _strlen -................
-  * @s:.....................
-  * Return: ....................
-  */
-int _strlen(const char *s)
-{
-	int x = 0;
-
-	while (s[x])
-		x++;
-
-	return (x);
+	else
+	{
+		return (0);
+	}
+	return (a);
 }
