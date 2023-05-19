@@ -1,33 +1,33 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - ............
- * @head: .............
- * @n: .................
- * Return: .................
+ * add_dnodeint - ...................
+ * @head: ....................
+ * @n: ................................
+ * Return: ................................
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *t, *nu;
+	dlistint_t *tmp, *new;
 
-	t = *head;
-	nu = malloc(sizeof(dlistint_t));
-	if (nu == NULL)
+	tmp = *head;
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 		return (NULL);
 
-	nu->n = n;
-	nu->prev = NULL;
-	if (t == NULL)
-		nu->next = NULL;
+	new->n = n;
+	new->prev = NULL;
+	if (tmp == NULL)
+		new->next = NULL;
 	else
 	{
-		while (t->prev)
-			t = t->prev;
+		while (tmp->prev)
+			tmp = tmp->prev;
 
-		t->prev = nu;
-		nu->next = t;
+		tmp->prev = new;
+		new->next = tmp;
 	}
-	*head = nu;
+	*head = new;
 
 	return (*head);
 }
