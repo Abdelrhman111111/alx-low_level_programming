@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * free_dlistint - .............
- * @head: .............
+ * free_dlistint - .........
+ * @head: ,,,,,,,,,,,
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *t, *h;
+	dlistint_t *t, *d;
 
 	if (head == NULL)
 		return;
@@ -16,8 +16,8 @@ void free_dlistint(dlistint_t *head)
 		t = t->prev;
 	while (t)
 	{
-		h = t;
+		d = t;
 		t = t->next;
-		free(h);
+		free(d);
 	}
 }

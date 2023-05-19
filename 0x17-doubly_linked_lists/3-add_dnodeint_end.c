@@ -1,35 +1,35 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - .......................
- * @head: ................
- * @n: .........................
- * Return: ...........
+ * add_dnodeint_end - ...............
+ * @head: .........................
+ * @n: ..........................................
+ * Return: ...................
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *t, *w;
+	dlistint_t *t, *e;
 
-	w = malloc(sizeof(dlistint_t));
-	if (w == NULL)
+	e = malloc(sizeof(dlistint_t));
+	if (e == NULL)
 		return (NULL);
 
-	w->n = n;
-	w->next = NULL;
+	e->n = n;
+	e->next = NULL;
 	t = *head;
 	while (t && t->next)
 		t = t->next;
 
 	if (t)
 	{
-		w->prev = t;
-		t->next = w;
+		e->prev = t;
+		t->next = e;
 	}
 	else
 	{
-		*head = w;
-		w->prev = NULL;
+		*head = e;
+		e->prev = NULL;
 	}
 
-	return (w);
+	return (e);
 }

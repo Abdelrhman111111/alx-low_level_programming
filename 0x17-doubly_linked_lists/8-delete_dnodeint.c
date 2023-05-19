@@ -1,52 +1,50 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - ,,,,,,,,,,,,,,
- * @head: ,,,,,,,,,,,,,
- * @index: .................
- * Return: .............
+ * delete_dnodeint_at_index - ...........
+ * @head:.......................
+ * @index: .........................
+ * Return:......................
  */
-
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *n;
-	unsigned int c;
+	dlistint_t *he;
+	dlistint_t *hea;
+	unsigned int x;
 
-	if (*head == NULL)
-		return (-1);
+	he = *head;
 
-	n = *head;
-	if (index == 0)
+	if (he != NULL)
+		while (he->prev != NULL)
+			he = he->prev;
+
+	x = 0;
+
+	while (he != NULL)
 	{
-		*head = n->next;
-		if (n->next != NULL)
+		if (x == index)
 		{
-			n->next->prev = NULL;
+			if (x == 0)
+			{
+				*head = he->next;
+				if (*head != NULL)
+					(*head)->prev = NULL;
+			}
+			else
+			{
+				hea->next = he->next;
+
+				if (he->next != NULL)
+					he->next->prev = hea;
+			}
+
+			free(he);
+			return (1);
 		}
-		free(n);
-		return (1);
-	}
-	for (c = 0; n != NULL && c < index - 1 ; c++)
-	{
-		n = n->next;
-	}
-	if (n == NULL || n->next == NULL)
-	{
-		return (-1);
+		hea = he;
+		he = hea->next;
+		x++;
 	}
 
-	if (n->next->next != NULL)
-	{
-		n->next = n->next->next;
-		free(n->next->prev);
-		n->next->prev = n;
-		return (1);
-	}
-	else
-	{
-		free(n->next);
-		n->next = NULL;
-		return (1);
-	}
 	return (-1);
 }
